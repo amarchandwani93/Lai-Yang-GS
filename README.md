@@ -1,4 +1,5 @@
 ### About System
+Please Begin your evaluation only after reading the below points completely.
 1. P2P message passing distributed system. So message sent in a channel will be immediately consumed by destination process without much time delay, if it is up and running.
 2. Each Process(Pi) in the system will have two channels between it and another process(Pj) (Send and Receive Channel)
 
@@ -44,4 +45,8 @@
 
 #### Minimum Requirements :
 1. Any Operating System
-2. JDK-7 or above
+2. JDK-8 or above
+
+#### Format of Input :
+All inputs to be provided in integer values only using keyboard
+As there is no visuals/animation available, please also draw a diagram on a paper as and when you proceed with steps.
