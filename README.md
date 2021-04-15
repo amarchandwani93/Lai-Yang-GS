@@ -4,7 +4,7 @@ Please Begin your evaluation only after reading the below points completely.
 2. Each Process(Pi) in the system will have two channels between it and another process(Pj) (Send and Receive Channel)
 
 ### Algorithms
-1. Lai-Yang Snapshot Algorithm
+Lai-Yang Global Snapshot Algorithm
    #### Implementation :
    Each process is a background worker and can read data like event-loop. Depending on the channel type the messages are sent to the receiver process. 
    #### Steps :
@@ -23,25 +23,25 @@ Please Begin your evaluation only after reading the below points completely.
         4. Exit
 
 #### Class
-    Process -> Holds source & destination and read & write channels.
-    LaiYangProcess -> Sub-class of Prcess, holds process color, all snapshots.
-    
-    Message -> Interface for Message
-    DataMessage -> Generic Message
-    LaiYangMessage -> Algorithm specific implementation where each messages are colored (RED/While)
+Process -> Holds source & destination and read & write channels.
+LaiYangProcess -> Sub-class of Prcess, holds process color, all snapshots.
 
-    Channel -> Interface
-    AbstractChannel -> Holds common resource requiments for FIF0 and non-FIFO channels
-    FifoChannel -> Ordered message passing implementation (Guarantee order)
-    NonFifoChannel -> Un-ordered message passing implementation
-    
-    Orchestration -> creates process and setup channels between them
-    LaiYangOrchestration -> Allows to send colored message, prints global state snapshots from a process
+Message -> Interface for Message
+DataMessage -> Generic Message
+LaiYangMessage -> Algorithm specific implementation where each messages are colored (RED/While)
+
+Channel -> Interface
+AbstractChannel -> Holds common resource requiments for FIF0 and non-FIFO channels
+FifoChannel -> Ordered message passing implementation (Guarantee order)
+NonFifoChannel -> Un-ordered message passing implementation
+
+Orchestration -> creates process and setup channels between them
+LaiYangOrchestration -> Allows to send colored message, prints global state snapshots from a process
 
 ### CHECK : LaiYangTester.java to test
-    Extract the contents of the zip file on your local system
-    if testing in Eclipse, import this project as a Maven project into eclipse by File -> Import. Click on Maven -> Existing Maven Projects. Select the folder you extracted the contents to usign browser button.
-    Once the project is open in eclipse, right click on the root folder -> Run As -> Java Application. Select LaiYangTester - com.chandwani.amar.tester to run the application in console.
+Extract the contents of the zip file on your local system
+if testing in Eclipse, import this project as a Maven project into eclipse by File -> Import. Click on Maven -> Existing Maven Projects. Select the folder you extracted the contents to usign browser button.
+Once the project is open in eclipse, right click on the root folder -> Run As -> Java Application. Select LaiYangTester - com.chandwani.amar.tester to run the application in console.
 
 #### Minimum Requirements :
 1. Any Operating System
